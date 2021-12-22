@@ -20,6 +20,8 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "no-undef": "off"
+        "no-undef": "off",
+        "func-names": "off",
+        "react/jsx-filename-extension": "off"
     }
 }
