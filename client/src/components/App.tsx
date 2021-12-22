@@ -1,15 +1,15 @@
-import React, { FC, ReactElement } from 'react';
-import Home from './Home.tsx'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home.tsx';
 
-const App = () => {
+const App = function () {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
-  )
+  );
 };
 
 export default App;
