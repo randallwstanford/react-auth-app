@@ -4,7 +4,7 @@ const SRC_DIR = path.join(__dirname, '/client/src/index.js');
 const DIST_DIR = path.join(__dirname, '/client/dist/');
 
 module.exports = {
-  entry: SRC_DIR,
+  entry: ['babel-polyfill', SRC_DIR],
   output: {
     filename: 'bundle.js',
     path: DIST_DIR,
@@ -18,8 +18,13 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react', '@babel/typescript'],
+            plugins: ['@babel/transform-runtime'],
           },
         },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
