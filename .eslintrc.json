@@ -25,6 +25,18 @@
     "func-names": "off",
     "react/jsx-filename-extension": "off",
     "import/extensions": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "arrow-body-style": "off",
+    "react/function-component-definition": "off",
+    "jsx-a11y/label-has-associated-control": ["error", {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }],
+      "jsx-a11y/label-has-for": ["error", {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }]
     }
 }
