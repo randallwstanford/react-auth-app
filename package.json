@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd server/index.ts",
-    "build": "webpack --mode development --watch"
+    "start": "nodemon server",
+    "build": "webpack --mode development --watch",
+    "login": "PGPASSWORD=fish psql -h localhost -U postgres -d user_data -p 5432 -a",
+    "db": "PGPASSWORD=fish psql -h localhost -U postgres -p 5432 -d user_data -a -f database/schema.sql"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "express": "^4.17.2",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",
+    "pg": "^8.7.1",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
