@@ -14,8 +14,3 @@ CREATE TABLE IF NOT EXISTS users (
   email TEXT NOT NULL UNIQUE,
   password TEXT NOT NULL
 );
-
-INSERT INTO users (email, password) VALUES (
-  'koop@mail.com',
-  crypt('poop', gen_salt('bf'))
-);
