@@ -1,12 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Routes, Route,
+} from 'react-router-dom';
 import Home from './Home/Home.tsx';
 import Login from './Login/Login.tsx';
 import useToken from './useToken.tsx';
 
 const App = () => {
   const { token, setToken } = useToken();
-
   if (!token) return <Login setToken={setToken} />;
 
   return (
