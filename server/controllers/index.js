@@ -10,7 +10,7 @@ const { getUserData, createAcct } = require('./queries');
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'user-data',
+  database: 'user_data',
   password: 'fish',
   port: 5432,
 });
@@ -25,6 +25,7 @@ pool.connect((err, client, release) => {
 });
 
 exports.createAccount = (req, res) => {
+  const { email, password } = req.params;
   pool.query(createAcct, [email, password])
     .then(() => console.log('account created!'))
     .catch((err) => console.log(err));
@@ -32,7 +33,7 @@ exports.createAccount = (req, res) => {
 };
 
 exports.getData = (req, res) => {
-  pool.query(getUserData, [])
+  pool.query(getUserData, [userId])
     .then((response) => res.send(response.rows[0]))
     .catch((err) => console.log(err));
 };
